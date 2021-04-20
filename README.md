@@ -1,4 +1,4 @@
-/*What is the most popular genre? In which countries is it purchased?*/
+/* What is the most popular genre? In which countries is it purchased? */
 SELECT g.Name, SUM(l.Quantity) num_purchases, i.BillingCountry
 FROM Genre g
 JOIN Track t
@@ -32,7 +32,7 @@ ON c.CustomerId = i.CustomerId
 GROUP BY e.employeeId, e.FirstName, e.LastName
 ORDER BY total_sales DESC, num_customers_assit DESC
 
-/*Which country generates the highest sales revenue. What are the top 5 contributing states in this country and what percentage do they each contribute to the sales revenue for the country?*/
+/* Which country generates the highest sales revenue. What are the top 5 contributing states in this country and what percentage do they each contribute to the sales revenue for the country? */
 SELECT i.BillingCountry, ROUND(SUM(l.UnitPrice*l.Quantity),2) sales_rev
 FROM Invoice i
 JOIN InvoiceLine l
